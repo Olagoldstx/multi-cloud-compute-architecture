@@ -92,7 +92,6 @@ Located in: `terraform/`
 
 Deploy all compute resources with one command:
 
-```bash
 terraform init
 terraform apply
 

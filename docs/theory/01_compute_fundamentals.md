@@ -1,3 +1,7 @@
+📘 Chapter 1 — Compute Fundamentals
+
+---
+
 <!-- Badges -->
 ![Compute](https://img.shields.io/badge/Topic-Compute%20Fundamentals-blue?style=for-the-badge)
 ![AWS EC2](https://img.shields.io/badge/AWS-EC2-orange?style=for-the-badge)

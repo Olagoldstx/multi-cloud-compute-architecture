@@ -1,3 +1,5 @@
+🌐 Chapter 3 — Network Security for Compute
+---
 <!-- Badges -->
 ![Network](https://img.shields.io/badge/Topic-Network%20Security-blue?style=for-the-badge)
 ![Security Groups](https://img.shields.io/badge/AWS-Security%20Groups-orange?style=for-the-badge)

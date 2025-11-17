@@ -1,5 +1,3 @@
-🚀 4️⃣ Master Multi-Cloud Runner
----
 #!/bin/bash
 set -e
 

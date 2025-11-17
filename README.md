@@ -1,4 +1,3 @@
-# multi-cloud-compute-architecture<!-- Banner -->
 <p align="center">
   <img src="docs/branding/securethecloud-banner.png" width="100%" />
 </p>

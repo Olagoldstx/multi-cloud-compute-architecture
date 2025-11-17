@@ -157,6 +157,8 @@ Agent installation (monitoring)
 ---
 
 📦 Folder Structure
+
+```plaintext 
 multi-cloud-compute-architecture/
 ├── README.md
 ├── docs/

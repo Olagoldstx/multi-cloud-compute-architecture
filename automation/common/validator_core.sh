@@ -1,6 +1,3 @@
-
-🚨 STEP 2 — validator_core.sh (Break & Fix Validator)
----
 #!/bin/bash
 
 # ================================================

@@ -1,3 +1,7 @@
+🔐 Chapter 2 — Identity on Compute
+
+---
+
 <!-- Badges -->
 ![Identity](https://img.shields.io/badge/Topic-Identity%20on%20Compute-blue?style=for-the-badge)
 ![IAM](https://img.shields.io/badge/AWS-IAM%20Role-orange?style=for-the-badge)

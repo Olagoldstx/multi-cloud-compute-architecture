@@ -200,12 +200,17 @@ resource "azurerm_network_interface" "nic" {
 
 module "azure_vm" {
   source              = "../../modules/azure-vm"
-  name                = "azure-secure-vm"
-  resource_group_name = azurerm_resource_group.rg.name
+
+###############################################
+# AZURE LOAD BALANCER
+###############################################
+
+module "azure_alb" {
+  source              = "../../modules/azure-alb"
+  name                = "azure-secure-lb"
   location            = var.azure_location
-  vm_size             = "Standard_B1ms"
+  resource_group_name = azurerm_resource_group.rg.name
   nic_id              = azurerm_network_interface.nic.id
-  ssh_public_key      = var.azure_ssh_public_key
 }
 
 ###############################################

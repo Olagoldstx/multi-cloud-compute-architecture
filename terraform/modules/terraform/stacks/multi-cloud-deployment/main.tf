@@ -144,10 +144,33 @@ resource "azurerm_network_security_group" "nsg" {
   resource_group_name = azurerm_resource_group.rg.name
 }
 
+###############################################
+# AZURE ZERO TRUST NETWORK MODULE
+###############################################
+
+module "azure_zero_trust" {
+  source              = "../../modules/azure-network"
+  location            = var.azure_location
+  resource_group_name = azurerm_resource_group.rg.name
+}
+
+###############################################
+# AZURE ZERO TRUST NETWORK MODULE
+###############################################
+
+module "azure_zero_trust" {
+  source              = "../../modules/azure-network"
+  location            = var.azure_location
+  resource_group_name = azurerm_resource_group.rg.name
+}
+
 resource "azurerm_network_interface" "nic" {
   name                = "stc-azure-nic"
   location            = var.azure_location
   resource_group_name = azurerm_resource_group.rg.name
+
+  # ATTACH ZERO-TRUST NSG HERE (INSIDE BLOCK)
+  network_security_group_id = module.azure_zero_trust.nsg_id
 
   ip_configuration {
     name                          = "internal"

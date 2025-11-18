@@ -264,3 +264,17 @@ module "gcp_vm" {
   subnetwork            = google_compute_subnetwork.subnet.id
   service_account_email = var.gcp_service_account
 }
+
+###############################################
+# GCP GLOBAL HTTPS LOAD BALANCER
+###############################################
+
+module "gcp_lb" {
+  source        = "../../modules/gcp-lb"
+  name          = "gcp-secure-lb"
+  project       = var.gcp_project
+  region        = var.gcp_region
+
+  # We can integrate an instance group later if needed
+  instance_group = null
+}

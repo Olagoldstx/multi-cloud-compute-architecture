@@ -221,6 +221,16 @@ resource "google_compute_firewall" "allow_internal" {
 }
 
 ###############################################
+# GCP ZERO TRUST NETWORK MODULE
+###############################################
+
+module "gcp_zero_trust" {
+  source  = "../../modules/gcp-network"
+  network = google_compute_network.vpc.name
+}
+
+
+###############################################
 # GCP VM MODULE
 ###############################################
 

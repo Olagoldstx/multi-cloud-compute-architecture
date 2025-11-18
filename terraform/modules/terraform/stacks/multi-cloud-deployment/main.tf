@@ -104,6 +104,21 @@ module "aws_zero_trust" {
 module "aws_ec2" {
   source = "../../modules/aws-ec2"
 
+###############################################
+# AWS APPLICATION LOAD BALANCER
+###############################################
+
+module "aws_alb" {
+  source = "../../modules/aws-alb"
+
+  name           = "aws-secure-alb"
+  vpc_id         = aws_vpc.main.id
+  sg_id          = module.aws_zero_trust.zero_trust_sg_id
+
+  # For now, LB will be internal only, using your existing subnet
+  public_subnets = [aws_subnet.private.id]
+}
+
   name              = "aws-secure-vm"
   instance_type     = "t3.micro"
   subnet_id         = aws_subnet.private.id

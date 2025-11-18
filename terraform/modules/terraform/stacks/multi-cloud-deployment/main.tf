@@ -108,7 +108,7 @@ module "aws_ec2" {
   instance_type     = "t3.micro"
   subnet_id         = aws_subnet.private.id
 
-  # Zero Trust Security Group
+  # Zero Trust Security Group (replaces older SG)
   security_group_id = module.aws_zero_trust.zero_trust_sg_id
 
   kms_key_id        = aws_kms_key.ec2.arn

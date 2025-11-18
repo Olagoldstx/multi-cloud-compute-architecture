@@ -107,7 +107,10 @@ module "aws_ec2" {
   name              = "aws-secure-vm"
   instance_type     = "t3.micro"
   subnet_id         = aws_subnet.private.id
-  security_group_id = aws_security_group.ec2_sg.id
+
+  # Zero Trust Security Group
+  security_group_id = module.aws_zero_trust.zero_trust_sg_id
+
   kms_key_id        = aws_kms_key.ec2.arn
   instance_profile  = var.aws_instance_profile
 }

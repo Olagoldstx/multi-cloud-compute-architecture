@@ -219,24 +219,24 @@
 
 ```mermaid
 flowchart LR
-    User -->|Authenticate| IdentityProvider[Identity Provider (IAM / Entra / IAM-GCP)]
+    User -->|Authenticate| IdentityProvider["Identity Provider (IAM / Entra / IAM-GCP)"]
     IdentityProvider -->|Short-lived tokens| ZeroTrustGateway
 
     ZeroTrustGateway --> AWS_EC2
     ZeroTrustGateway --> Azure_VM
     ZeroTrustGateway --> GCP_Compute
 
-    AWS_EC2 --> AWS_SecurityGroup[SG + NACL + IAM Role]
-    Azure_VM --> Azure_NSG[NSG + Managed Identity]
-    GCP_Compute --> GCP_Firewall[VPC FW + IAM SA]
+    AWS_EC2 --> AWS_SecurityGroup["SG + NACL + IAM Role"]
+    Azure_VM --> Azure_NSG["NSG + Managed Identity"]
+    GCP_Compute --> GCP_Firewall["VPC FW + IAM SA"]
 
-    AWS_SecurityGroup --> Logs_AWS[CloudTrail + GuardDuty]
-    Azure_NSG --> Logs_Azure[Azure Monitor + Defender]
-    GCP_Firewall --> Logs_GCP[Cloud Logging + Security Command Center]
+    AWS_SecurityGroup --> Logs_AWS["CloudTrail + GuardDuty"]
+    Azure_NSG --> Logs_Azure["Azure Monitor + Defender"]
+    GCP_Firewall --> Logs_GCP["Cloud Logging + Security Command Center"]
 
     Logs_AWS --> SIEM
     Logs_Azure --> SIEM
     Logs_GCP --> SIEM
 
-    SIEM --> SOC[Security Operations Center]
+    SIEM --> SOC["Security Operations Center"]
 ```

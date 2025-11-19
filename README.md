@@ -218,8 +218,9 @@
 # 🔐 Zero-Trust Multi-Cloud Architecture (Mermaid)
 
 ```mermaid
+
 flowchart LR
-    User -->|Authenticate| IdentityProvider[Identity Provider (IAM / Entra / IAM-GCP)]
+    User -->|Authenticate| IdentityProvider[Identity Provider<br/>IAM / Entra / IAM-GCP]
     IdentityProvider -->|Short-lived tokens| ZeroTrustGateway
 
     ZeroTrustGateway --> AWS_EC2

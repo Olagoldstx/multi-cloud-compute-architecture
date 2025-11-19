@@ -341,3 +341,29 @@ module "gcp_lb" {
   # We can integrate an instance group later if needed
   instance_group = null
 }
+
+###############################################
+# GCP LOGGING BUCKET (for Log Sink)
+###############################################
+
+resource "google_storage_bucket" "gcp_logs" {
+  name     = "stc-gcplogs-${var.gcp_project}"
+  location = var.gcp_region
+}
+
+###############################################
+# GCP MONITORING & SECURITY MODULE
+###############################################
+
+module "gcp_monitoring" {
+  source   = "../../modules/gcp-monitoring"
+  prefix   = "stc"
+  project  = var.gcp_project
+  region   = var.gcp_region
+
+  # Required for SCC & LB logs & VPC flow logs
+  network      = google_compute_network.vpc.id
+
+  # GCP log sink storage bucket (we will create this next)
+  bucket_name  = "stc-gcplogs-${var.gcp_project}"
+}

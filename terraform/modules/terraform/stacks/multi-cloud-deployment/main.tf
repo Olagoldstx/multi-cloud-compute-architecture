@@ -103,6 +103,16 @@ module "aws_zero_trust" {
 
 module "aws_ec2" {
   source = "../../modules/aws-ec2"
+ name              = "aws-secure-vm"
+  instance_type     = "t3.micro"
+  subnet_id         = aws_subnet.private.id
+
+  # Zero Trust Security Group (replaces older SG)
+  security_group_id = module.aws_zero_trust.zero_trust_sg_id
+
+  kms_key_id        = aws_kms_key.ec2.arn
+  instance_profile  = var.aws_instance_profile
+}
 
 ###############################################
 # AWS APPLICATION LOAD BALANCER
@@ -119,16 +129,27 @@ module "aws_alb" {
   public_subnets = [aws_subnet.private.id]
 }
 
-  name              = "aws-secure-vm"
-  instance_type     = "t3.micro"
-  subnet_id         = aws_subnet.private.id
+###############################################
+# AWS MONITORING & SECURITY MODULE
+###############################################
 
-  # Zero Trust Security Group (replaces older SG)
-  security_group_id = module.aws_zero_trust.zero_trust_sg_id
+module "aws_monitoring" {
+  source = "../../modules/aws-monitoring"
 
-  kms_key_id        = aws_kms_key.ec2.arn
-  instance_profile  = var.aws_instance_profile
+  prefix                = "stc"
+  region                = var.aws_region
+  vpc_id                = aws_vpc.main.id
+
+  # Logging buckets you will create in next step
+  cloudtrail_bucket     = "stc-cloudtrail-${var.aws_region}"
+  flow_logs_bucket_arn  = "arn:aws:s3:::stc-flowlogs-${var.aws_region}"
+
+  # Pass ALB ARN for enabling access logs
+  alb_arn               = module.aws_alb.alb_arn
 }
+
+
+ 
 
 ###############################################
 # AZURE NETWORK (RG + VNet + Subnet + NSG)

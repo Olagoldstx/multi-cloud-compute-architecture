@@ -1,206 +1,241 @@
+<!-- ========================================================= -->
+<!-- =============== SECURETHECLOUD BANNER =================== -->
+<!-- ========================================================= -->
 <p align="center">
-  <img src="docs/branding/securethecloud-banner.png" width="100%" />
+  <img src="docs/branding/securethecloud.png" width="900" alt="SecureTheCloud Banner">
 </p>
 
-<h1 align="center">☁️ Multi-Cloud Compute Architecture</h1>
-<h3 align="center">AWS EC2 • Azure Virtual Machines • GCP Compute Engine</h3>
-
+<h1 align="center">🌐 Multi-Cloud Compute Architecture</h1>
 <p align="center">
-Built by <b>Ola Omoniyi (Olagoldstx)</b> — SecureTheCloud.dev  
-</p>
-
-<p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/Multi--Cloud-AWS%20%7C%20Azure%20%7C%20GCP-blue?style=for-the-badge"></a>
-  <a href="#"><img src="https://img.shields.io/badge/Architecture-Production%20Grade-green?style=for-the-badge"></a>
-  <a href="#"><img src="https://img.shields.io/badge/Security-Zero%20Trust-red?style=for-the-badge"></a>
-  <a href="#"><img src="https://img.shields.io/badge/Terraform-Multi--Provider-orange?style=for-the-badge"></a>
+  AWS • Azure • GCP • Zero-Trust • Terraform • Secure Automation
 </p>
 
 ---
 
-## 🌍 Overview
+<!-- ========================================================= -->
+<!-- ======================== BADGES ========================= -->
+<!-- ========================================================= -->
+<p align="center">
 
-This repository is the **official SecureTheCloud multi-cloud compute course**, teaching you how to design, secure, automate, and deploy compute resources across:
+  <img alt="Repo Size" src="https://img.shields.io/github/repo-size/Olagoldstx/multi-cloud-compute-architecture?color=blue&style=for-the-badge">
+  <img alt="Stars" src="https://img.shields.io/github/stars/Olagoldstx/multi-cloud-compute-architecture?style=for-the-badge&color=yellow">
+  <img alt="License" src="https://img.shields.io/github/license/Olagoldstx/multi-cloud-compute-architecture?style=for-the-badge&color=lightgrey">
 
-- **AWS EC2**
-- **Azure Virtual Machines**
-- **GCP Compute Engine**
+  <!-- Cloud Providers -->
+  <img alt="AWS" src="https://img.shields.io/badge/AWS-Supported-orange?style=for-the-badge&logo=amazonaws">
+  <img alt="Azure" src="https://img.shields.io/badge/Azure-Supported-0078D4?style=for-the-badge&logo=microsoftazure">
+  <img alt="GCP" src="https://img.shields.io/badge/GCP-Supported-1A73E8?style=for-the-badge&logo=googlecloud">
 
-This course blends:
+  <!-- Tools -->
+  <img alt="Terraform" src="https://img.shields.io/badge/Terraform-Automated-844FBA?style=for-the-badge&logo=terraform">
 
-- 📘 Textbook-style theory  
-- 🧪 Hands-on labs  
-- 🛡️ Security hardening  
-- 🏗️ Terraform multi-cloud automation  
-- 🎓 Advanced architecture patterns  
-- 🧩 Zero-trust compute engineering  
+  <!-- Brand -->
+  <img alt="SecureTheCloud" src="https://img.shields.io/badge/SecureTheCloud-Labs-red?style=for-the-badge&logo=cloudflare">
 
-Everything is deployed using your live cloud accounts:
-
-| Cloud | ID |
-|-------|-----|
-| **AWS Account ID** | `764265373335` |
-| **Azure Tenant ID** | `776f9ea5-7add-469d-bc51-8e855e9a1d26` |
-| **Azure Subscription** | `501c458a-5def-42cf-bbb8-c75078c1cdbc` |
-| **GCP Project ID** | `caramel-pager-470614-d1` |
-| **GCP Project Number** | `973064685337` |
+</p>
 
 ---
 
-## 📚 Course Structure
+<!-- ========================================================= -->
+<!-- ================== NAVIGATION BUTTONS =================== -->
+<!-- ========================================================= -->
+<p align="center">
+  <a href="#-repository-tree">
+    <img src="https://img.shields.io/badge/Repository_Tree-Click_Here-0A84FF?style=for-the-badge&logo=github">
+  </a>
 
-### **1. Theory (Textbook Style)**
-Located in: `docs/theory/`
+  <a href="docs/theory/">
+    <img src="https://img.shields.io/badge/Theory-Documentation-34C759?style=for-the-badge&logo=readthedocs">
+  </a>
 
-1. Compute Fundamentals  
-2. Identity on Compute  
-3. Network Security  
-4. Encryption & KMS  
-5. OS Hardening & Patching  
-6. Monitoring & Runtime Security  
-7. Multi-Cloud Zero-Trust Compute Architecture  
+  <a href="labs/">
+    <img src="https://img.shields.io/badge/Labs-Hands_On-FF9500?style=for-the-badge&logo=terminal">
+  </a>
 
----
+  <a href="terraform/">
+    <img src="https://img.shields.io/badge/Terraform-Infrastructure-5E5CE6?style=for-the-badge&logo=terraform">
+  </a>
 
-### **2. Hands-On Labs**
-
-Located in: `labs/`
-
-- **AWS EC2** (private, encrypted, IAM role, SSM)
-- **Azure VM** (Managed Identity, Key Vault, NSG)
-- **GCP Compute Engine** (Service Account, CMEK, firewall lockdown)
-
-Each lab includes:
-
-✔ CLI commands  
-✔ Terraform option  
-✔ Validation steps  
-✔ Architecture diagram  
-✔ Security checks  
-✔ Troubleshooting  
+  <a href="https://github.com/Olagoldstx">
+    <img src="https://img.shields.io/badge/Olagoldstx-GitHub_Profile-8E8E93?style=for-the-badge&logo=github">
+  </a>
+</p>
 
 ---
 
-### **3. Terraform Multi-Cloud Deployment**
+# 📦 Repository Tree
 
-Located in: `terraform/`
+<details id="-repository-tree">
+<summary><strong>📁 Click to Expand Repository Tree</strong></summary>
 
-- `modules/aws-ec2/`
-- `modules/azure-vm/`
-- `modules/gcp-compute/`
-- `stacks/multi-cloud-deployment/`
+<br>
 
-Deploy all compute resources with one command:
+📦 **multi-cloud-compute-architecture**
 
-terraform init
-terraform apply
+├── 📄 [README.md](README.md)  
+├── 🧰 [multicloud_run.sh](multicloud_run.sh)  
+├── 📝 [variables.tf](variables.tf)  
+├── 📝 [outputs.tf](outputs.tf)  
 
 ---
 
-🧠 Architecture Diagram (High-Level)
+### 🔧 automation/
+├── 📂 [automation/aws](automation/aws/)  
+│   └── 🏃 [run_lab.sh](automation/aws/run_lab.sh)  
+├── 📂 [automation/azure](automation/azure/)  
+│   └── 🏃 [run_lab.sh](automation/azure/run_lab.sh)  
+├── 📂 [automation/gcp](automation/gcp/)  
+│   └── 🏃 [run_lab.sh](automation/gcp/run_lab.sh)  
+└── 📂 [automation/common](automation/common/)  
+    ├── ⚙️ [backend.sh](automation/common/backend.sh)  
+    ├── 🧾 [logger.sh](automation/common/logger.sh)  
+    └── 🔍 [validator_core.sh](automation/common/validator_core.sh)  
+
+---
+
+### 📚 docs/
+├── 📂 [docs/architecture](docs/architecture/)  
+│   ├── 🧩 [multi-cloud-diagram.md](docs/architecture/multi-cloud-diagram.md)  
+│   ├── 🛰️ [aws-network.md](docs/architecture/aws-network.md)  
+│   ├── 🔷 [azure-network.md](docs/architecture/azure-network.md)  
+│   ├── 🌐 [gcp-network.md](docs/architecture/gcp-network.md)  
+│   └── 🛡️ [zero-trust-overview.md](docs/architecture/zero-trust-overview.md)  
+├── 📂 [docs/theory](docs/theory/)  
+│   ├── 📘 [compute-basics.md](docs/theory/compute-basics.md)  
+│   ├── 🔐 [zero-trust-concepts.md](docs/theory/zero-trust-concepts.md)  
+│   └── 🌍 [terraform-basics.md](docs/theory/terraform-basics.md)  
+└── 📂 [docs/binder](docs/binder/)  
+    └── 📄 *(future PDF exports)*  
+
+---
+
+### 🏗 terraform/
+├── 📂 [terraform/modules](terraform/modules/)  
+│   ├── 📂 [aws-ec2](terraform/modules/aws-ec2/)  
+│   │   ├── 📝 [main.tf](terraform/modules/aws-ec2/main.tf)  
+│   │   ├── 📝 [variables.tf](terraform/modules/aws-ec2/variables.tf)  
+│   │   └── 📝 [outputs.tf](terraform/modules/aws-ec2/outputs.tf)  
+│   ├── 📂 [aws-network](terraform/modules/aws-network/)  
+│   │   ├── 📝 [main.tf](terraform/modules/aws-network/main.tf)  
+│   │   ├── 📝 [variables.tf](terraform/modules/aws-network/variables.tf)  
+│   │   └── 📝 [outputs.tf](terraform/modules/aws-network/outputs.tf)  
+│   ├── 📂 [azure-vm](terraform/modules/azure-vm/)  
+│   │   ├── 📝 [main.tf](terraform/modules/azure-vm/main.tf)  
+│   │   ├── 📝 [variables.tf](terraform/modules/azure-vm/variables.tf)  
+│   │   └── 📝 [outputs.tf](terraform/modules/azure-vm/outputs.tf)  
+│   ├── 📂 [azure-network](terraform/modules/azure-network/)  
+│   │   ├── 📝 [main.tf](terraform/modules/azure-network/main.tf)  
+│   │   ├── 📝 [variables.tf](terraform/modules/azure-network/variables.tf)  
+│   │   └── 📝 [outputs.tf](terraform/modules/azure-network/outputs.tf)  
+│   ├── 📂 [gcp-compute](terraform/modules/gcp-compute/)  
+│   │   ├── 📝 [main.tf](terraform/modules/gcp-compute/main.tf)  
+│   │   ├── 📝 [variables.tf](terraform/modules/gcp-compute/variables.tf)  
+│   │   └── 📝 [outputs.tf](terraform/modules/gcp-compute/outputs.tf)  
+│   └── 📂 [gcp-network](terraform/modules/gcp-network/)  
+│       ├── 📝 [main.tf](terraform/modules/gcp-network/main.tf)  
+│       ├── 📝 [variables.tf](terraform/modules/gcp-network/variables.tf)  
+│       └── 📝 [outputs.tf](terraform/modules/gcp-network/outputs.tf)  
+
+├── 📂 [terraform/stacks](terraform/stacks/)  
+│   └── 📂 [multi-cloud-deployment](terraform/stacks/multi-cloud-deployment/)  
+│       ├── 📝 [main.tf](terraform/stacks/multi-cloud-deployment/main.tf)  
+│       ├── 📝 [variables.tf](terraform/stacks/multi-cloud-deployment/variables.tf)  
+│       └── 📝 [outputs.tf](terraform/stacks/multi-cloud-deployment/outputs.tf)  
+
+---
+
+### 🧪 logs/
+└── 📄 [run-YYYYMMDD-HHMMSS.log](logs/)
+
+</details>
+
+---
+
+# 📘 Theory Modules
+
+<p align="center">
+
+<a href="docs/theory/compute-basics.md">
+  <img src="https://img.shields.io/badge/Compute_Basics-Click_to_Read-0A84FF?style=for-the-badge&logo=azurefunctions">
+</a>
+
+<a href="docs/theory/zero-trust-concepts.md">
+  <img src="https://img.shields.io/badge/Zero_Trust_Concepts-View_Diagram-34C759?style=for-the-badge&logo=databricks">
+</a>
+
+<a href="docs/theory/terraform-basics.md">
+  <img src="https://img.shields.io/badge/Terraform_Basics-Start_Here-5E5CE6?style=for-the-badge&logo=terraform">
+</a>
+
+</p>
+
+---
+
+# 🧪 Multi-Cloud Hands-On Labs
+
+<p align="center">
+
+<a href="labs/aws/">
+  <img src="https://img.shields.io/badge/AWS_Labs-EC2%20|%20Lambda%20|%20EKS-orange?style=for-the-badge&logo=amazonaws">
+</a>
+
+<a href="labs/azure/">
+  <img src="https://img.shields.io/badge/Azure_Labs-VM%20|%20Functions%20|%20AKS-0078D4?style=for-the-badge&logo=microsoftazure">
+</a>
+
+<a href="labs/gcp/">
+  <img src="https://img.shields.io/badge/GCP_Labs-Compute%20Engine%20|%20GKE-1A73E8?style=for-the-badge&logo=googlecloud">
+</a>
+
+<a href="labs/cross-cloud/">
+  <img src="https://img.shields.io/badge/Cross_Cloud-Labs-FF9500?style=for-the-badge&logo=cloudflare">
+</a>
+
+</p>
+
+---
+
+# 🏗 Terraform Architecture Navigation
+
+<p align="center">
+
+<a href="terraform/modules/">
+  <img src="https://img.shields.io/badge/Modules-Browse-8E8E93?style=for-the-badge&logo=terraform">
+</a>
+
+<a href="terraform/stacks/multi-cloud-deployment/">
+  <img src="https://img.shields.io/badge/Main_Stack-Multi_Cloud_Deployment-5856D6?style=for-the-badge&logo=terraform">
+</a>
+
+<a href="terraform/environments/">
+  <img src="https://img.shields.io/badge/Environments-Deploy-ACACAC?style=for-the-badge&logo=icloud">
+</a>
+
+</p>
+
+---
+
+# 🔐 Zero-Trust Multi-Cloud Architecture (Mermaid)
 
 ```mermaid
 flowchart LR
-A[DevOps / Architect] --> B[Multi-Cloud IaC Pipeline]
+    User -->|Authenticate| IdentityProvider[Identity Provider (IAM / Entra / IAM-GCP)]
+    IdentityProvider -->|Short-lived tokens| ZeroTrustGateway
 
-B --> C1[AWS EC2 + IAM Role]
-B --> C2[Azure VM + Managed Identity]
-B --> C3[GCP Compute Engine + Service Account]
+    ZeroTrustGateway --> AWS_EC2
+    ZeroTrustGateway --> Azure_VM
+    ZeroTrustGateway --> GCP_Compute
 
-C1 --> D1[EBS + KMS]
-C2 --> D2[Managed Disk + Key Vault]
-C3 --> D3[Persistent Disk + CMEK]
+    AWS_EC2 --> AWS_SecurityGroup[SG + NACL + IAM Role]
+    Azure_VM --> Azure_NSG[NSG + Managed Identity]
+    GCP_Compute --> GCP_Firewall[VPC FW + IAM SA]
 
-C1 --> E1[Security Groups]
-C2 --> E2[Network Security Groups]
-C3 --> E3[VPC Firewall Rules]
+    AWS_SecurityGroup --> Logs_AWS[CloudTrail + GuardDuty]
+    Azure_NSG --> Logs_Azure[Azure Monitor + Defender]
+    GCP_Firewall --> Logs_GCP[Cloud Logging + Security Command Center]
 
-C1 --> F1[CloudWatch + SSM]
-C2 --> F2[Azure Monitor]
-C3 --> F3[Cloud Monitoring]
-```
+    Logs_AWS --> SIEM
+    Logs_Azure --> SIEM
+    Logs_GCP --> SIEM
 
----
-🔐 Security Features Implemented
-Identity
-
-EC2 IAM Role
-
-Azure Managed Identity
-
-GCP Service Account
-
-Networking
-
-Private subnets only
-
-No public IP
-
-Zero-trust firewall rules
-
-Encryption
-
-AWS KMS
-
-Azure Key Vault + DES
-
-GCP CMEK
-
-Hardening
-
-CIS benchmark baseline
-
-SSM / Azure Update Manager / GCP Patch Jobs
-
-Agent installation (monitoring)
-
----
-
-📦 Folder Structure
-
-```plaintext 
-multi-cloud-compute-architecture/
-├── README.md
-├── docs/
-│   ├── theory/
-│   ├── diagrams/
-│   ├── binder/
-│   └── branding/
-├── labs/
-│   ├── aws/
-│   ├── azure/
-│   └── gcp/
-└── terraform/
-    ├── modules/
-    │   ├── aws-ec2/
-    │   ├── azure-vm/
-    │   └── gcp-compute/
-    └── stacks/
-        └── multi-cloud-deployment/
-
-🎓 Who This Course Is For
-
-Cloud Security Engineers
-
-Cloud Architects
-
-DevSecOps Engineers
-
-IAM Engineers
-
-SRE / Platform teams
-
-SOC / Blue Team analysts
-
-Anyone preparing for advanced cloud interviews
-
-⭐ Support the Project
-
-If this repository helps you grow in cloud security:
-
-Give it a ⭐ on GitHub!
-
-👨‍💻 Author
-
-Ola Omoniyi (Olagoldstx)
-Founder — SecureTheCloud.dev
+    SIEM --> SOC[Security Operations Center]

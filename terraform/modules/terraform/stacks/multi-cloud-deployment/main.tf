@@ -235,6 +235,48 @@ module "azure_alb" {
 }
 
 ###############################################
+# STORAGE ACCOUNT FOR NSG FLOW LOGS
+###############################################
+
+resource "random_integer" "unique_id" {
+  min = 10000
+  max = 99999
+}
+
+resource "azurerm_storage_account" "stc_monitoring" {
+  name                     = "stcmonitor${random_integer.unique_id.result}"
+  resource_group_name      = azurerm_resource_group.rg.name
+  location                 = var.azure_location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+
+  tags = {
+    environment = "monitoring"
+  }
+}
+
+###############################################
+# AZURE MONITORING & SECURITY MODULE
+###############################################
+
+module "azure_monitoring" {
+  source = "../../modules/azure-monitoring"
+
+  prefix              = "stc"
+  location            = var.azure_location
+  resource_group_name = azurerm_resource_group.rg.name
+
+  # Zero Trust NSG (already created in Stage 2)
+  nsg_id              = module.azure_zero_trust.nsg_id
+
+  # Azure requires a storage account ID for NSG Flow Logs
+  storage_account_id  = azurerm_storage_account.stc_monitoring.id
+
+  # Load Balancer diagnostics
+  lb_id               = module.azure_alb.lb_id
+}
+
+###############################################
 # GCP NETWORK (VPC + Subnetwork + Firewall)
 ###############################################
 

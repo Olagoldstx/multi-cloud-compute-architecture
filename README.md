@@ -239,3 +239,4 @@ flowchart LR
     Logs_GCP --> SIEM
 
     SIEM --> SOC[Security Operations Center]
+```

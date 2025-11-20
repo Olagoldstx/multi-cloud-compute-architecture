@@ -149,7 +149,16 @@ module "aws_monitoring" {
 }
 
 
- 
+ ###############################################
+# AWS SIEM Logging Buckets
+###############################################
+
+module "aws_siem_buckets" {
+  source = "../../modules/aws-monitoring"
+
+  region = var.aws_region
+}
+
 
 ###############################################
 # AZURE NETWORK (RG + VNet + Subnet + NSG)
